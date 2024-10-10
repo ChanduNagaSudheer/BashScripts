@@ -16,7 +16,14 @@ check_status(){
 		exit 1;
 	fi
 }
-
+pid_check(){
+	if [ -f "~/working/Automation.pid" ]; then
+		echo "PID file is present";
+		exit 1;
+	else
+		echo "PID file is not present";
+	fi
+}
 step1(){
 	cd $WORKING_DIR;
 	mkdir Temp;
