@@ -42,6 +42,7 @@ clean(){
 	echo "folder deleted successfully";
 }
 
+pid_check
 step1
 step2
 clean
