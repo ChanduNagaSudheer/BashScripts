@@ -1,5 +1,5 @@
 
-
+PID_DIR="working";
 WORKING_DIR="Executions";
 GIT_REPO=$1;
 
@@ -17,7 +17,9 @@ check_status(){
 	fi
 }
 pid_check(){
-	if [ -f "~/working/Automation.pid" ]; then
+	cd
+	cd $PID_DIR;
+	if [ -f "Automation.pid" ]; then
 		echo "PID file is present";
 		exit 1;
 	else
@@ -25,6 +27,7 @@ pid_check(){
 	fi
 }
 step1(){
+	cd
 	cd $WORKING_DIR;
 	mkdir Temp;
 	check_status "Creating dir";
