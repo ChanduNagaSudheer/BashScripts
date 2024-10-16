@@ -2,6 +2,8 @@
 PID_DIR="working";
 WORKING_DIR="Executions";
 GIT_REPO=$1;
+EMAIL=$2
+PASS=$3
 
 cloning_repo(){
 	cd Temp;
@@ -28,19 +30,24 @@ pid_check(){
 }
 step1(){
 	cd
+	rm -rf ~/Executions/Temp;
+	check_status "Deleting prev files";
+	echo $$> ~/working/Automation.pid;
 	cd $WORKING_DIR;
 	mkdir Temp;
 	check_status "Creating dir";
-	cloning_repo
+	cloning_repo 
 }
 step2(){
 	cd BashTest;
 	echo "Current dir - $(pwd)";
 	mvn clean test;
 	check_status "Testing";
+	ksh -x ~/Scripts_Storage/Email_Report.ksh EMAIL PASS   
 }
 clean(){
 	cd ../..;
+	rm -f ~/working/Automation.pid
 	rm -rf Temp;
 	echo "folder deleted successfully";
 }
