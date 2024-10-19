@@ -43,7 +43,7 @@ step2(){
 	echo "Current dir - $(pwd)";
 	mvn clean test;
 	check_status "Testing";
-	ksh -x ~/Scripts_Storage/Email_Report.ksh EMAIL PASS   
+	ksh -x ~/Scripts_Storage/Email_Report.ksh $EMAIL $PASS   
 }
 clean(){
 	cd ../..;

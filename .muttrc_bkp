@@ -1,0 +1,7 @@
+set realname = "Chandu"
+set from = "yvanced321@gmail.com"
+set use_from = yes
+set envelope_from = yes
+
+# SMTP settings (using msmtp)
+set sendmail = "/data/data/com.termux/files/usr/bin/msmtp"

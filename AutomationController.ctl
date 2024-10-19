@@ -1,7 +1,7 @@
-let email=$1
-let pass=$2
+email=$1
+pass=$2
 
-ksh -x ~/Scripts_Storage/Automation.ksh https://github.com/ChanduNagaSudheer/BashTest.git email pass
+ksh -x ~/Scripts_Storage/Automation.ksh https://github.com/ChanduNagaSudheer/BashTest.git $email $pass
 
 exit_status=$?;
 echo "Exit status is $exit_status";
